@@ -1,7 +1,9 @@
 <?php
 
+	$realname=$_POST['realname'];	
 	$username=$_POST['username'];
 	$mail=$_POST['email'];
+	$cedula=$_POST['dni'];
 	$pass= $_POST['pass'];
 	$rpass=$_POST['rpass'];
 
@@ -16,7 +18,7 @@
 				//Password Encriptada					
 				$passencript=md5($pass);
 				//require("connect_db.php");
-				mysql_query("INSERT INTO login VALUES('','$username','$passencript','$mail','')");
+				mysql_query("INSERT INTO login VALUES('','$cedula','$realname','$username','$passencript','$mail','')");
 				//echo 'Se ha registrado con exito';
 				echo ' <script language="javascript">alert("Usuario registrado con éxito");</script> ';
 

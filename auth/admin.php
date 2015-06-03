@@ -20,6 +20,7 @@
 <header class="header">
 <div class="row">
 	<?php
+	require("connect_db.php");
 	include("include/cabecera.php");
 	?>
 </div>

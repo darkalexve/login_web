@@ -12,6 +12,11 @@
 <center><h1>Bienvenido al Sistema de Gestion Estudiantil</h1></center>
 
 <body>
+
+<?php
+session_start(); // al volver al index si existe una session, esta sera destruida, existen formas de conservarlas como con un if(session_start()!= NULL). Pero por el momento para el ejemplo no es valido.
+session_destroy(); // Se destruye la session existente de esta forma no permite el duplicado.
+?>
 	<center><div class="tit"><h3 style="color: #0000FF; ">Inicio de sesión</h3>
 		<center><div class="Ingreso">
 
@@ -25,7 +30,7 @@
 		<tr><td><label style="font-size: 14pt"><b>Nombre de Usuario: </b></label></td>
 			<td width=80> <input class="form-group has-success" style="border-radius:15px;" type="text" name="username"></td></tr>
 		<tr><td><label style="font-size: 14pt"><b>Contraseña: </b></label></td>
-			<td witdh=80><input style="border-radius:15px;" type="password" name="pass"></td></tr>
+			<td witdh=80><input style="border-radius:15px;" type="password" required name="pass"></td></tr>
 		<tr><td></td>
 			<td width=80 align=center><input class="btn btn-primary" type="submit" value="Ingresar"></td>
 			</tr></tr></table>

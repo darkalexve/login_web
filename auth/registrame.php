@@ -14,14 +14,22 @@
 
 <center><form method="post" action="" >
   <fieldset>
-    <legend  style="font-size: 18pt"><b>Registro Unico de Usuarios</b></legend>
+    <legend  style="font-size: 22pt"><b>Registro Unico de Usuarios</b></legend>
+    <div class="form-group">
+      <label style="font-size: 14pt"><b>Ingresa tu Nombre y Apellido: </b></label>
+      <input type="text" name="realname" class="form-control" required placeholder="Ingresa tu nombre y apellido real" />
+    </div>
     <div class="form-group">
       <label style="font-size: 14pt"><b>Ingresa tu nombre de usuario: </b></label>
-      <input type="text" name="username" class="form-control" placeholder="Ingresa tu nombre" />
+      <input type="text" name="username" class="form-control" required placeholder="Ingresa tu nombre" />
     </div>
     <div class="form-group">
       <label style="font-size: 14pt; "><b>Ingresa tu email: </b></label>
       <input type="text" name="email" class="form-control"  required placeholder="Ingresa email"/>
+    </div>
+    <div class="form-group">
+      <label style="font-size: 14pt"><b>Ingresa tu Cedula de Identidad: </b></label>
+      <input type="text" name="dni" class="form-control" required placeholder="Ingresa tu cedula" />
     </div>
     <div class="form-group">
       <label style="font-size: 14pt; "><b>Ingresa tu contraseña</b></label>
