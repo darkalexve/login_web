@@ -2,6 +2,7 @@
 
 	$username=$_POST['username'];
 	$pass=$_POST['pass'];
+	$passencript=md5($pass);
 
 require("connect_db.php");
 /*Consulta de mysql con la que indicamos que necesitamos que seleccione
@@ -16,7 +17,7 @@ $result = mysql_query("SELECT * FROM login WHERE user = '$username'");
 if($row = mysql_fetch_array($result))
 {  //Primer Corchete Usuario Normal   
 //Si el usuario es correcto ahora validamos su contraseña
- if($row["password"] == $pass)
+ if($row["password"] == $passencript)
 	{ //Abro Segundo Corchete
 	//Creamos sesión
 	session_start();  
@@ -37,7 +38,7 @@ $result2 = mysql_query("SELECT * FROM login WHERE user = '$username'");
 if($row = mysql_fetch_array($result2))
 {  //Primer Corchete Administradores 
 //Si el usuario es correcto ahora validamos su contraseña
- if($row["pasadmin"] == $pass)
+ if($row["pasadmin"] == $passencript)
 	{ //Abro Segundo Corchete Administradores
 
 	//Creamos sesión

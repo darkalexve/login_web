@@ -58,81 +58,18 @@
 		<div class="caption">
 		
 <!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////-->
-		<h2> Listado de Usuarios Registrados</h2>
-	<?php
-	//creamos la sesion
-	session_start();
-	if(!isset($_SESSION['usuario'])) 
-	{ header('Location: index.php');
-	  exit(); 
-	} else {
-	echo "Bienvenido Sr.: ".$_SESSION['usuario']."...!!";
-	}
-	?>	
-		<div class="well well-small">
-		<hr class="soft"/>
-		<h4>Usuarios:</h4>
-		<div class="row-fluid">
-		
+		<h2> Buscador de Usuarios</h2>
 
-
-
-			<?php
-
-				require("connect_db.php");
-				$sql=("SELECT * FROM login");
-				$query=mysql_query($sql);
-
-				echo "<table border='1'; class='table table-hover';>";
-					echo "<tr class='warning'>";
-						echo "<td>Cedula:</td>";
-						echo "<td>Nombre y Apellido:</td>";
-						echo "<td>Username:</td>";
-						echo "<td>Contraseña:</td>";
-						echo "<td>Email:</td>";
-						echo "<td>Editar</td>";
-						echo "<td>Borrar</td>";
-					echo "</tr>";
-
-			    
-			?>
-			  
-			<?php 
-				 while($arreglo=mysql_fetch_array($query)){
-				  	echo "<tr class='success'>";
-				    	echo "<td>$arreglo[1]</td>";
-				    	echo "<td>$arreglo[2]</td>";
-				    	echo "<td>$arreglo[3]</td>";
-				    	echo "<td>**********</td>";
-				    	echo "<td>$arreglo[5]</td>";
-				    	echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='images/actualizar.gif' class='img-rounded'></td>";
-						echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><img src='images/eliminar.png' class='img-rounded'/></a></td>";
-					echo "</tr>";
-				}
-
-				echo "</table>";
-
-					extract($_GET);
-					if(@$idborrar==2){
-		
-						$sqlborrar="DELETE FROM login WHERE id=$id";
-						$resborrar=mysql_query($sqlborrar);
-						echo '<script>alert("REGISTRO ELIMINADO")</script> ';
-						//header('Location: proyectos.php');
-						echo "<script>location.href='admin.php'</script>";
-					}
-
-			?>
-			
-				  
-			  			  
-			  
-		
-		
+	<center><form name="forma" method="post" action="deletecommand_user.php">
+		<h2><marquee>ELIMINAR DATOS DE USUARIO</marquee></h2>
+		Nombre a eliminar:<input type="text" name="userdel" id="userdel">
+	<input type="submit" name="borrar" value="Borrar">
+	</form>
 		<div class="span8">
 		
 		</div>	
 		</div>	
+		<br/>
 		<br/>
 		
 
