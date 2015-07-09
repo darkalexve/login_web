@@ -58,12 +58,11 @@
 		<div class="caption">
 		
 <!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////-->
-		<h2> Buscador de Usuarios</h2>
+		<h2> Eliminar Usuario</h2>
 
-	<center><form name="forma" method="post" action="deletecommand_user.php">
-		<h2><marquee>ELIMINAR DATOS DE USUARIO</marquee></h2>
-		Nombre a eliminar:<input type="text" name="userdel" id="userdel">
-	<input type="submit" name="borrar" value="Borrar">
+	<center><form name="forma" method="post" action="eliminar-user.php">
+		Ingrese el nombre a eliminar:<input type="text" name="userdel" id="userdel">
+	<input class="btn btn-danger" type="submit" name="borrar" value="Borrar">
 	</form>
 		<div class="span8">
 		
@@ -71,6 +70,30 @@
 		</div>	
 		<br/>
 		<br/>
+
+<!-- Code PHP For Delete Users By Jonathan Melendez
+      ================================================== -->
+<?php
+
+$userdelete=$_POST['userdel'];
+
+if(isset($_REQUEST['borrar']))
+{
+$registro=mysql_query("SELECT ID FROM login where user='$userdelete'");
+if($be=mysql_fetch_array($registro))
+	{
+	mysql_query("DELETE FROM login where user='$userdelete'");
+	echo '<script>alert("El Usuario '.$userdelete.' fue eliminado satisfactoriamente")</script> ';
+	}
+	else
+			{
+			if (empty($_POST['userdel']))
+				{echo '<script>alert("Debes introducir el usuario que deseas eliminar")</script> ';}
+			else
+			echo "<center><h3>El Usuario escrito NO EXISTE. Intente nuevamente</h3></center>.";
+			}
+}
+?>
 		
 
 
