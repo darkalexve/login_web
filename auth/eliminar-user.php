@@ -31,8 +31,8 @@
 	  <div class="nav-collapse">
 		<ul class="nav">
 			<li class=""><a href="admin.php">ADMINISTRADOR DEL SITIO</a></li>
-			<li class=""><a href="ad-admin.php">AGREGAR ADMIN</a></li>
-			<li class=""><a href="eliminar-user.php">ELIMINAR USUARIOS</a></li>
+			<li class=""><a href="ad_admin.php">AGREGAR ADMIN</a></li>
+			<li class=""><a href="#">ELIMINAR USUARIOS</a></li>
 			<li class=""><a href="dashboard.php">IR AL DASHBOARD</a></li>
 			 
 	
