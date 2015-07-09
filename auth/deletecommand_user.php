@@ -1,10 +1,12 @@
 <?php
+
+$username=$_POST['userdel'];
+
 include ("connect_db.php");
-$con=conectar(); //almacena la conexion.
 if(isset($_REQUEST['borrar'])){
-$reg=mysql_query("SELECT ID FROM login where user='$_POST[userdel]'");
-if($be=mysql_fetch_array($reg)){
-mysql_query("DELETE FROM login where user='$_POST[userdel]'");
+$registro=mysql_query("SELECT ID FROM login where user='$username'");
+if($be=mysql_fetch_array($registro)){
+mysql_query("DELETE FROM login where user='$username'");
 echo "Datos eliminados";
 }
 else
