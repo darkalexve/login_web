@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Jonathan Melendez">
 
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 
    
   </head>
@@ -16,8 +16,8 @@
 <header class="header">
 <div class="row">
 	<?php
-	require("connect_db.php");
-	include("include/cabecera.php");
+	require("../connect_db.php");
+	include("cabecera.php");
 	?>
 </div>
 </header>
@@ -30,23 +30,33 @@
 	<div class="container">
 	  <div class="nav-collapse">
 		<ul class="nav">
-			<li class=""><a href="admin.php">ADMINISTRADOR DEL SITIO</a></li>
-			<li class=""><a href="ad_admin.php">AGREGAR ADMIN</a></li>
-			<li class=""><a href="#">ELIMINAR USUARIOS</a></li>
-			<li class=""><a href="dashboard.php">IR AL DASHBOARD</a></li>
-			 
+			<li class=""><a href="../admin.php">Inicio</a></li>
+				<li class="dropdown">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#">Acciones Administrativas <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li class="nav-header">Seleccione una Accion:</li>
+					<li class="divider"></li>
+					<li><a href="#">Agregar Administrador</a></li>
+					<li><a href="listado.php">Listar Usuarios</a></li>
+					<li><a href="#">Eliminar Usuarios</a></li>
+					
+				</ul>
+			<li class=""><a href="../dashboard.php">Dashboard</a></li>
+			</li> 
 	
 		</ul>
 		<form action="#" class="navbar-search form-inline" style="margin-top:6px">
 		
 		</form>
 		<ul class="nav pull-right">
-			  <li><a href="cerrar.php"> Cerrar Cesión </a></li>			 
+
+			  <li><a href="../cerrar.php"> Cerrar Cesión </a></li>			 
 		</ul>
 	  </div><!-- /.nav-collapse -->
 	</div>
   </div><!-- /navbar-inner -->
 </div>
+
 
 <!-- ======================================================================================================================== -->
 <div class="row">
@@ -56,6 +66,8 @@
 	<div class="span12">
 
 		<div class="caption">
+			<div class="well well-small">
+			<div class="row-fluid">
 		
 <!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////-->
 		<h2> Eliminar Usuario</h2>
@@ -65,6 +77,8 @@
 	<input class="btn btn-danger" type="submit" name="borrar" value="Borrar">
 	</form>
 		<div class="span8">
+			</div>	
+			</div>	
 		
 		</div>	
 		</div>	
@@ -130,8 +144,8 @@ if($be=mysql_fetch_array($registro))
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/jquery-1.8.3.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
 	</style>
   </body>
 </html>

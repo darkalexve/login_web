@@ -22,8 +22,7 @@
 		
 		</form>
 		<ul class="nav pull-right">
-
-			  <li><a href="cerrar.php"> Cerrar Cesión </a></li>			 
+			  <li><a href="index.php"> Cerrar Cesión </a></li>			 
 		</ul>
 	  </div><!-- /.nav-collapse -->
 	</div>
