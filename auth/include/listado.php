@@ -115,7 +115,7 @@
 				    	echo "<td>$arreglo[3]</td>";
 				    	echo "<td>**********</td>";
 				    	echo "<td>$arreglo[5]</td>";
-				    	echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='../img/write_edit_icon.png' class='img-rounded' ></td>";
+				    	echo "<td><a href='actualizar.php'><img src='../img/write_edit_icon.png' class='img-rounded' ></td>";
 						echo "<td><a href='listado.php?id=$arreglo[0]&idborrar=2'><img src='../img/remove.png' class='img-rounded'/></a></td>";
 					echo "</tr>";
 				}
@@ -129,7 +129,7 @@
 						$resborrar=mysql_query($sqlborrar);
 						echo '<script>alert("REGISTRO ELIMINADO")</script> ';
 						//header('Location: proyectos.php');
-						echo "<script>location.href='listado.php.php'</script>";
+						echo "<script>location.href='listado.php'</script>";
 					}
 
 			?>
